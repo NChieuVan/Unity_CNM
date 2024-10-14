@@ -10,6 +10,7 @@ public class Controller : MonoBehaviour
     {
         Debug.Log("Unity_CNM");
         Console.WriteLine("Hello");
+        Console.WriteLine("QuocLam");
     }
 
     // Update is called once per frame
