@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class Controller : MonoBehaviour
     void Start()
     {
         Debug.Log("Unity_CNM");
+        Console.WriteLine("Hello");
     }
 
     // Update is called once per frame
