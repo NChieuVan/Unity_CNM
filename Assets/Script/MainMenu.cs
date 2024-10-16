@@ -5,7 +5,7 @@ using UnityEngine;
 public class MainMenu : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject exitPanel, Menupanel;
+    public GameObject exitPanel, Menupanel, LevelSelection,BackLevelSelection;
     void Start()
     {
         
@@ -42,4 +42,16 @@ public class MainMenu : MonoBehaviour
     {
         Application.OpenURL("https://play.google.com/store/apps/details?id=com.brokendiamond.advance.car.parking.car.driver.simulator");
     }
+
+    public void Play()
+    {
+        LevelSelection.SetActive(true);
+        Menupanel.SetActive(false );
+    }
+    public void BackFromlevelSelection()
+    {
+        Menupanel.SetActive(true );
+        LevelSelection.SetActive(false);
+    }
 }
+
