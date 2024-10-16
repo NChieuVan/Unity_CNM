@@ -5,7 +5,7 @@ using UnityEngine;
 public class MainMenu : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject exitPanel, Menupanel, LevelSelection,BackLevelSelection;
+    public GameObject exitPanel, Menupanel, LevelSelection,BackLevelSelection, carSelection, canvas, car1;
     void Start()
     {
         
@@ -45,13 +45,20 @@ public class MainMenu : MonoBehaviour
 
     public void Play()
     {
-        LevelSelection.SetActive(true);
+        carSelection.SetActive(true);
         Menupanel.SetActive(false );
+        canvas.GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceCamera;
     }
     public void BackFromlevelSelection()
     {
         Menupanel.SetActive(true );
         LevelSelection.SetActive(false);
+    }
+    public void BackFromByHome(){
+        carSelection.SetActive(false);
+        Menupanel.SetActive(true);
+        car1.SetActive(false);
+
     }
 }
 
