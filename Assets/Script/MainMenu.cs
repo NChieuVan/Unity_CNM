@@ -5,7 +5,23 @@ using UnityEngine;
 public class MainMenu : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject exitPanel, Menupanel, LevelSelection,BackLevelSelection, carSelection, canvas, car1;
+    
+    [Header("MainMenu")]
+    public GameObject exitPanel, BackLevelSelection;
+    public GameObject Menupanel;
+
+    [Space(5)]
+    [Header("carSelection")]
+    public GameObject carSelection;
+    public GameObject[] CarList;
+
+    [Header("LevelSelection")]
+    public GameObject LevelSelection;
+    
+    [Header("General")]
+    public GameObject canvas;
+
+    
     void Start()
     {
         
@@ -17,6 +33,7 @@ public class MainMenu : MonoBehaviour
         
     }
 
+    #region MainMenu
     public void Exit()
     {
         exitPanel.SetActive(true);
@@ -48,7 +65,12 @@ public class MainMenu : MonoBehaviour
         carSelection.SetActive(true);
         Menupanel.SetActive(false );
         canvas.GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceCamera;
+        CarList[counter].SetActive(true);
     }
+
+    #endregion
+
+    #region LevelSelection
     public void BackFromlevelSelection()
     {
         Menupanel.SetActive(true );
@@ -57,8 +79,48 @@ public class MainMenu : MonoBehaviour
     public void BackFromByHome(){
         carSelection.SetActive(false);
         Menupanel.SetActive(true);
-        car1.SetActive(false);
+        CarList[counter].SetActive(false);
 
     }
+
+
+    #endregion
+
+    #region CarSelection
+    int counter = 0;
+    public void NextCar()
+    {
+        if(counter != CarList.Length -1)
+        {
+            counter++;
+        }else
+        {
+            counter =0;
+        }
+        foreach (var item in CarList)
+        {
+            item.SetActive(false);
+        }
+        CarList[counter].SetActive(true);
+    }
+
+    public void PreviousCar()
+    {
+        if(counter == 0)
+        {
+            counter = CarList.Length - 1;
+        }
+        else
+        {
+            counter--;
+        }
+        foreach (var item in CarList)
+        {
+            item.SetActive(false);
+        }
+        CarList[counter].SetActive(true);
+    }
+
+    #endregion
 }
 
