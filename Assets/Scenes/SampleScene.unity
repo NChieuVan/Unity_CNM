@@ -531,12 +531,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exitPanel: {fileID: 1434744278}
-  Menupanel: {fileID: 38351857}
-  LevelSelection: {fileID: 0}
   BackLevelSelection: {fileID: 0}
+  Menupanel: {fileID: 38351857}
   carSelection: {fileID: 0}
+  CarList: []
+  LevelSelection: {fileID: 0}
   canvas: {fileID: 0}
-  car1: {fileID: 0}
 --- !u!1 &52616424
 GameObject:
   m_ObjectHideFlags: 0
@@ -2214,6 +2214,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 349479558}
   m_CullTransparentMesh: 1
+--- !u!1 &369903848 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1780351737568190, guid: 1e955d1cbf4874cb696fef1ecbb86e75, type: 3}
+  m_PrefabInstance: {fileID: 224857941}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &369991702
 GameObject:
   m_ObjectHideFlags: 0
@@ -3311,6 +3316,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 572639771}
   m_CullTransparentMesh: 1
+--- !u!1 &593010946 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1239628981513944, guid: eac1b4f56a1d647b8b052374cedc308e, type: 3}
+  m_PrefabInstance: {fileID: 1926625537}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &638134237
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4380,7 +4390,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 871540120}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1947923495}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: NextCar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &871540120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4652,6 +4674,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 926385664}
   m_CullTransparentMesh: 1
+--- !u!1 &938777176 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1332896982454310, guid: 137ed4baf264d4b9a9c93d1b8231a80b, type: 3}
+  m_PrefabInstance: {fileID: 329359195}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &957317217
 GameObject:
   m_ObjectHideFlags: 0
@@ -5993,7 +6020,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1230520639}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1947923495}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: PreviousCar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1230520639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8161,12 +8200,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exitPanel: {fileID: 1434744278}
-  Menupanel: {fileID: 38351857}
-  LevelSelection: {fileID: 1440255296}
   BackLevelSelection: {fileID: 369991702}
+  Menupanel: {fileID: 38351857}
   carSelection: {fileID: 1812036721}
+  CarList:
+  - {fileID: 1728089567}
+  - {fileID: 938777176}
+  - {fileID: 593010946}
+  - {fileID: 1954330873}
+  - {fileID: 369903848}
+  LevelSelection: {fileID: 1440255296}
   canvas: {fileID: 345635814}
-  car1: {fileID: 1728089567}
 --- !u!1 &1948326242
 GameObject:
   m_ObjectHideFlags: 0
@@ -8242,6 +8286,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1948326242}
   m_CullTransparentMesh: 1
+--- !u!1 &1954330873 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1339424909602166, guid: eb1843ed24e424f569a9f450c96c639c, type: 3}
+  m_PrefabInstance: {fileID: 126685689}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2006925372
 GameObject:
   m_ObjectHideFlags: 0
