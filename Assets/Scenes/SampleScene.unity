@@ -4285,7 +4285,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 464.4696, y: -331.0608}
+  m_AnchoredPosition: {x: 464.4696, y: -240}
   m_SizeDelta: {x: -1080.2277, y: -717.8008}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &853407837
@@ -4334,7 +4334,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1947923495}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: Play
+        m_MethodName: NextToCarSelection
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
