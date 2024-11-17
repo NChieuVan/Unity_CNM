@@ -5,7 +5,7 @@ using UnityEngine;
 public class MainMenu : MonoBehaviour
 {
     // Start is called before the first frame update
-    
+
     [Header("MainMenu")]
     public GameObject exitPanel, BackLevelSelection;
     public GameObject Menupanel;
@@ -17,20 +17,20 @@ public class MainMenu : MonoBehaviour
 
     [Header("LevelSelection")]
     public GameObject LevelSelection;
-    
+
     [Header("General")]
     public GameObject canvas;
 
-    
+
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     #region MainMenu
@@ -63,7 +63,7 @@ public class MainMenu : MonoBehaviour
     public void Play()
     {
         carSelection.SetActive(true);
-        Menupanel.SetActive(false );
+        Menupanel.SetActive(false);
         canvas.GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceCamera;
         CarList[counter].SetActive(true);
     }
@@ -73,10 +73,11 @@ public class MainMenu : MonoBehaviour
     #region LevelSelection
     public void BackFromlevelSelection()
     {
-        Menupanel.SetActive(true );
+        Menupanel.SetActive(true);
         LevelSelection.SetActive(false);
     }
-    public void BackFromByHome(){
+    public void BackFromByHome()
+    {
         carSelection.SetActive(false);
         Menupanel.SetActive(true);
         CarList[counter].SetActive(false);
@@ -90,12 +91,13 @@ public class MainMenu : MonoBehaviour
     int counter = 0;
     public void NextCar()
     {
-        if(counter != CarList.Length -1)
+        if (counter != CarList.Length - 1)
         {
             counter++;
-        }else
+        }
+        else
         {
-            counter =0;
+            counter = 0;
         }
         foreach (var item in CarList)
         {
@@ -106,7 +108,7 @@ public class MainMenu : MonoBehaviour
 
     public void PreviousCar()
     {
-        if(counter == 0)
+        if (counter == 0)
         {
             counter = CarList.Length - 1;
         }
@@ -119,6 +121,27 @@ public class MainMenu : MonoBehaviour
             item.SetActive(false);
         }
         CarList[counter].SetActive(true);
+    }
+    public void NextToCarSelection()
+    {
+
+        // Tắt giao diện menu chính
+        Menupanel.SetActive(false);
+
+        // Hiển thị giao diện chọn xe
+        carSelection.SetActive(false);
+
+        // Hiển thị giao diện chọn màn chơi
+        LevelSelection.SetActive(true);
+
+        // Chuyển chế độ render của canvas nếu cần
+        canvas.GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceOverlay;
+
+        // Tắt xe đang chọn để tránh nhầm lẫn
+        foreach (var item in CarList)
+        {
+            item.SetActive(false);
+        }
     }
 
     #endregion
