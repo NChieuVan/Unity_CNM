@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class MainMenu : MonoBehaviour
     [Header("MainMenu")]
     public GameObject exitPanel, BackLevelSelection;
     public GameObject Menupanel;
+    public GameObject Loading;
 
     [Space(5)]
     [Header("carSelection")]
@@ -75,7 +77,28 @@ public class MainMenu : MonoBehaviour
     {
         Menupanel.SetActive(true);
         LevelSelection.SetActive(false);
+        canvas.GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceCamera;
     }
+
+    public void LevelSelect(int levelNo)
+    {
+        PlayerPrefs.SetInt("LevelNumber", levelNo);
+        Loading.SetActive(true);
+
+
+        //Gọi hàm chờ 3s để hiển thị màn hình mới
+        StartCoroutine(LoadLevelAfterDelay());
+
+
+
+    }
+
+    private IEnumerator LoadLevelAfterDelay()
+    {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("GamePlay");
+    }
+
     public void BackFromByHome()
     {
         carSelection.SetActive(false);
@@ -134,6 +157,9 @@ public class MainMenu : MonoBehaviour
         // Hiển thị giao diện chọn màn chơi
         LevelSelection.SetActive(true);
 
+        PlayerPrefs.SetInt("CarNumber", counter);
+        print(PlayerPrefs.GetInt("CarNumber" + 1));
+
         // Chuyển chế độ render của canvas nếu cần
         canvas.GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceOverlay;
 
@@ -142,6 +168,8 @@ public class MainMenu : MonoBehaviour
         {
             item.SetActive(false);
         }
+
+
     }
 
     #endregion
