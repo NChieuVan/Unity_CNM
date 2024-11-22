@@ -23,6 +23,11 @@ public class MainMenu : MonoBehaviour
     [Header("General")]
     public GameObject canvas;
 
+    [Header("LevelSelected")]
+    public GameObject levelSelected;
+    public GameObject[] LevelList;
+
+
 
     void Start()
     {
@@ -84,19 +89,22 @@ public class MainMenu : MonoBehaviour
     {
         PlayerPrefs.SetInt("LevelNumber", levelNo);
         Loading.SetActive(true);
+        //GameObject LevelList = PlayerPrefs.SetInt("LevelNumber", levelNo);
 
 
         //Gọi hàm chờ 3s để hiển thị màn hình mới
-        StartCoroutine(LoadLevelAfterDelay());
-
+        StartCoroutine(LoadLevelAfterDelay(null,null));
 
 
     }
 
-    private IEnumerator LoadLevelAfterDelay()
+    private IEnumerator LoadLevelAfterDelay(GameObject Xe, GameObject level)
     {
         yield return new WaitForSeconds(3f);
         SceneManager.LoadScene("GamePlay");
+        ///
+        //set tọa độ level
+        // chọn level
     }
 
     public void BackFromByHome()
@@ -172,6 +180,21 @@ public class MainMenu : MonoBehaviour
 
     }
 
+    #endregion
+
+    #region Level_Selected
+
+    public int level = 1;
+    public double[] PositionLevelSelected()
+    {
+        //double[]
+        //return [1.0, 2, 3];
+        return null;
+    }
+    public void LevelSelected()
+    {
+      
+    }
     #endregion
 }
 
