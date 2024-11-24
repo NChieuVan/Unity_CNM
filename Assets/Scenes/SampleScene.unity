@@ -229,8 +229,8 @@ MonoBehaviour:
   CarList: []
   LevelSelection: {fileID: 0}
   canvas: {fileID: 0}
-  levelSelected: {fileID: 0}
-  LevelList: []
+  level_car: 1
+  Car: {fileID: 0}
   level: 1
 --- !u!1 &72456613
 GameObject:
@@ -782,63 +782,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5417356574927957715, guid: 4c148b4ae8efd4de4963bfb4059d6d13, type: 3}
   m_PrefabInstance: {fileID: 4998000320197928996}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &286812562
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3985968295143540383, guid: 78c6a8c469db898408535c4890167cf9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 565.9256
-      objectReference: {fileID: 0}
-    - target: {fileID: 3985968295143540383, guid: 78c6a8c469db898408535c4890167cf9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 60.992516
-      objectReference: {fileID: 0}
-    - target: {fileID: 3985968295143540383, guid: 78c6a8c469db898408535c4890167cf9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 4.0742755
-      objectReference: {fileID: 0}
-    - target: {fileID: 3985968295143540383, guid: 78c6a8c469db898408535c4890167cf9, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3985968295143540383, guid: 78c6a8c469db898408535c4890167cf9, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3985968295143540383, guid: 78c6a8c469db898408535c4890167cf9, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3985968295143540383, guid: 78c6a8c469db898408535c4890167cf9, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3985968295143540383, guid: 78c6a8c469db898408535c4890167cf9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3985968295143540383, guid: 78c6a8c469db898408535c4890167cf9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3985968295143540383, guid: 78c6a8c469db898408535c4890167cf9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5798883753048109226, guid: 78c6a8c469db898408535c4890167cf9, type: 3}
-      propertyPath: m_Name
-      value: Level
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 78c6a8c469db898408535c4890167cf9, type: 3}
 --- !u!1001 &329359195
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3634,11 +3577,6 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 3, y: -1}
   m_UseGraphicAlpha: 1
---- !u!1 &1699757176 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7988669323361455936, guid: 78c6a8c469db898408535c4890167cf9, type: 3}
-  m_PrefabInstance: {fileID: 286812562}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1716593380 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 763379219094485015, guid: 89cb46b166132415faf9f12ea3cf604c, type: 3}
@@ -3861,11 +3799,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1832526066}
   m_CullTransparentMesh: 1
---- !u!1 &1835737123 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8388951054530420887, guid: 78c6a8c469db898408535c4890167cf9, type: 3}
-  m_PrefabInstance: {fileID: 286812562}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1926625537
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3997,10 +3930,8 @@ MonoBehaviour:
   - {fileID: 1780351977479367}
   LevelSelection: {fileID: 1440255296}
   canvas: {fileID: 345635814}
-  levelSelected: {fileID: 1440255296}
-  LevelList:
-  - {fileID: 1699757176}
-  - {fileID: 1835737123}
+  level_car: 1
+  Car: {fileID: 0}
   level: 1
 --- !u!1 &1954330873 stripped
 GameObject:
@@ -4475,9 +4406,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9019707380321541918, guid: b0b46712bd75942198ae2bd4bb5f1696, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9019707380321541918, guid: b0b46712bd75942198ae2bd4bb5f1696, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1947923495}
+    - target: {fileID: 9019707380321541918, guid: b0b46712bd75942198ae2bd4bb5f1696, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GetLevel_3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4496,9 +4435,21 @@ PrefabInstance:
       value: Level2
       objectReference: {fileID: 0}
     - target: {fileID: 4173177834718417826, guid: de9c54512c0cf4f5ca5333d1950f2d06, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173177834718417826, guid: de9c54512c0cf4f5ca5333d1950f2d06, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1947923495}
+    - target: {fileID: 4173177834718417826, guid: de9c54512c0cf4f5ca5333d1950f2d06, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GetLevel_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4621977814202416432, guid: de9c54512c0cf4f5ca5333d1950f2d06, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7516167344190360044, guid: de9c54512c0cf4f5ca5333d1950f2d06, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5134,9 +5085,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7971371757670063662, guid: 4c148b4ae8efd4de4963bfb4059d6d13, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7971371757670063662, guid: 4c148b4ae8efd4de4963bfb4059d6d13, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1947923495}
+    - target: {fileID: 7971371757670063662, guid: 4c148b4ae8efd4de4963bfb4059d6d13, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GetLevel_1
+      objectReference: {fileID: 0}
     - target: {fileID: 9007234408744396903, guid: 4c148b4ae8efd4de4963bfb4059d6d13, type: 3}
       propertyPath: m_Name
       value: Level1
@@ -5363,4 +5322,3 @@ SceneRoots:
   - {fileID: 126685689}
   - {fileID: 224857941}
   - {fileID: 4692249845080836240}
-  - {fileID: 286812562}
