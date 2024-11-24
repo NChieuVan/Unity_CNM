@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -23,9 +25,9 @@ public class MainMenu : MonoBehaviour
     [Header("General")]
     public GameObject canvas;
 
-    [Header("LevelSelected")]
-    public GameObject levelSelected;
-    public GameObject[] LevelList;
+    //[Header("LevelSelected")]
+    //public GameObject levelSelected;
+    //public GameObject[] LevelList;
 
 
 
@@ -85,27 +87,94 @@ public class MainMenu : MonoBehaviour
         canvas.GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceCamera;
     }
 
-    public void LevelSelect(int levelNo)
+    
+    
+    /*public void LevelSelect(int levelNo)
     {
         PlayerPrefs.SetInt("LevelNumber", levelNo);
+
         Loading.SetActive(true);
-        //GameObject LevelList = PlayerPrefs.SetInt("LevelNumber", levelNo);
+        
 
+        // Gọi hàm chờ 3s để hiển thị màn hình mới
+        StartCoroutine(LoadLevelAfterDelay());
+    }*/
 
-        //Gọi hàm chờ 3s để hiển thị màn hình mới
-        StartCoroutine(LoadLevelAfterDelay(null,null));
+    public int level_car ;
+    Vector3 desiredPosition= new Vector3(91.3f, 4.0f, 930f);
+    public GameObject Car;
 
-
-    }
-
-    private IEnumerator LoadLevelAfterDelay(GameObject Xe, GameObject level)
+    // Các phương thức để chọn cấp độ
+    public void GetLevel_1() { SetLevel(1); }
+    public void GetLevel_2() { SetLevel(2); }
+    public void GetLevel_3() { SetLevel(3); }
+    public void GetLevel_4() { SetLevel(4); }
+    public void GetLevel_5() { SetLevel(5); }
+    public void SetLevel(int level)
     {
+        level_car = level;
+        Debug.Log(level_car + "_0000");
+        Loading.SetActive(true);
+        StartCoroutine(LoadLevelAfterDelay());
+    }
+    private IEnumerator LoadLevelAfterDelay()
+    {
+        // Thiết lập vị trí dựa trên cấp độ
+        switch (level_car)
+        {
+            case 1:
+                desiredPosition = new Vector3(91.3f, 4.0f, 935f);
+                break;
+            case 2:
+                desiredPosition = new Vector3(100f, 4.0f, 923.0f);
+                Debug.Log(level_car + "2_0000");
+                break;
+            // Thêm các trường hợp cho các cấp độ khác nếu cần
+            case 3:
+                desiredPosition = new Vector3(110f, 5f, 910f);
+                break;
+            case 4:
+                desiredPosition = new Vector3(120f, 6f, 905f);
+                break;
+            case 5:
+                desiredPosition = new Vector3(130f, 7f, 900f);
+                break;
+            default:
+                desiredPosition = Vector3.zero; // Giá trị mặc định
+                break;
+        }
+        
         yield return new WaitForSeconds(3f);
         SceneManager.LoadScene("GamePlay");
-        ///
-        //set tọa độ level
-        // chọn level
+        Car.transform.position = desiredPosition;
+
     }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "GamePlay")
+        {
+            // Di chuyển xe đến vị trí đã chỉ định
+            if (Car != null)
+            {
+                Car.transform.position = desiredPosition;
+                Debug.Log("Car Position Set To: " + desiredPosition); // In ra vị trí xe
+            }
+            Loading.SetActive(false); // Ẩn màn hình loading
+        }
+    }
+
 
     public void BackFromByHome()
     {
@@ -182,19 +251,5 @@ public class MainMenu : MonoBehaviour
 
     #endregion
 
-    #region Level_Selected
-
-    public int level = 1;
-    public double[] PositionLevelSelected()
-    {
-        //double[]
-        //return [1.0, 2, 3];
-        return null;
-    }
-    public void LevelSelected()
-    {
-      
-    }
-    #endregion
-}
+   }
 
