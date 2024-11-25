@@ -15118,6 +15118,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!20 &155779523 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8723514066713230692, guid: e9f459d5f7598764f871582fcefa0088, type: 3}
+  m_PrefabInstance: {fileID: 1344037384}
+  m_PrefabAsset: {fileID: 0}
 --- !u!134 &157237439
 PhysicMaterial:
   m_ObjectHideFlags: 0
@@ -26685,6 +26690,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 455887305}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &254511163 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 104771899610954712, guid: e9f459d5f7598764f871582fcefa0088, type: 3}
+  m_PrefabInstance: {fileID: 1344037384}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &256513835
 Mesh:
   m_ObjectHideFlags: 0
@@ -39752,6 +39762,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!20 &376113434 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 7694581909863674869, guid: e9f459d5f7598764f871582fcefa0088, type: 3}
+  m_PrefabInstance: {fileID: 1344037384}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &378232228
 GameObject:
   m_ObjectHideFlags: 0
@@ -70526,6 +70541,11 @@ Transform:
   - {fileID: 1303861252}
   m_Father: {fileID: 991951851}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &664157078 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8723330197942631773, guid: e9f459d5f7598764f871582fcefa0088, type: 3}
+  m_PrefabInstance: {fileID: 1344037384}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &666937306
 GameObject:
   m_ObjectHideFlags: 0
@@ -120157,6 +120177,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1199818890}
   m_Mesh: {fileID: 829813934}
+--- !u!4 &1200975025 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7094441168131902322, guid: e9f459d5f7598764f871582fcefa0088, type: 3}
+  m_PrefabInstance: {fileID: 1344037384}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1201460196
 GameObject:
   m_ObjectHideFlags: 0
@@ -124029,6 +124054,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!20 &1227519141 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 7600212634197008577, guid: e9f459d5f7598764f871582fcefa0088, type: 3}
+  m_PrefabInstance: {fileID: 1344037384}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1227596960
 GameObject:
   m_ObjectHideFlags: 0
@@ -139122,6 +139152,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2026632513773547464, guid: e9f459d5f7598764f871582fcefa0088, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1344037386}
+    - targetCorrespondingSourceObject: {fileID: 2026632513773547464, guid: e9f459d5f7598764f871582fcefa0088, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1344037390}
+    - targetCorrespondingSourceObject: {fileID: 2026632513773547464, guid: e9f459d5f7598764f871582fcefa0088, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1344037391}
   m_SourcePrefab: {fileID: 100100000, guid: e9f459d5f7598764f871582fcefa0088, type: 3}
 --- !u!1 &1344037385 stripped
 GameObject:
@@ -139150,6 +139186,52 @@ MonoBehaviour:
   canvas: {fileID: 0}
   level_car: 0
   Car: {fileID: 1344037385}
+--- !u!114 &1344037390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344037385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e067eaf814a4ca44b8776cbf8d5d97e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  reverseSpeed: 5
+  turnSpeed: 35
+  maxSteeringAngle: 35
+  wheelRotationSpeed: 300
+  acceleration: 5
+  maxSpeed: 35
+  deceleration: 10
+  naturalDrag: 2
+  frontLeftWheel: {fileID: 1200975025}
+  frontRightWheel: {fileID: 2033555584}
+  rearLeftWheel: {fileID: 664157078}
+  rearRightWheel: {fileID: 254511163}
+  frontLights: {fileID: 0}
+  rearLeftLight: {fileID: 0}
+  rearRightLight: {fileID: 0}
+  fadeSpeed: 2
+  cameraFront: {fileID: 376113434}
+  cameraBack: {fileID: 155779523}
+  cameraInterior: {fileID: 1227519141}
+--- !u!114 &1344037391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344037385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ca9dba5862ea45baa71168784396097, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cars: []
+  CityLevels: []
 --- !u!1 &1344636137
 GameObject:
   m_ObjectHideFlags: 0
@@ -214059,6 +214141,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2032606052}
   m_Mesh: {fileID: 1373034008}
+--- !u!4 &2033555584 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7437226414730217802, guid: e9f459d5f7598764f871582fcefa0088, type: 3}
+  m_PrefabInstance: {fileID: 1344037384}
+  m_PrefabAsset: {fileID: 0}
 --- !u!134 &2034261191
 PhysicMaterial:
   m_ObjectHideFlags: 0
