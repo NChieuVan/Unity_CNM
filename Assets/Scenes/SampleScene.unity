@@ -229,9 +229,7 @@ MonoBehaviour:
   CarList: []
   LevelSelection: {fileID: 0}
   canvas: {fileID: 0}
-  level_car: 1
-  Car: {fileID: 0}
-  level: 1
+  tagertLevel: {fileID: 0}
 --- !u!1 &72456613
 GameObject:
   m_ObjectHideFlags: 0
@@ -1416,6 +1414,51 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 616bde529b69e42ec8bf652f157522b6, type: 3}
+--- !u!1 &669151635
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 669151637}
+  - component: {fileID: 669151636}
+  m_Layer: 0
+  m_Name: Tagert
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &669151636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669151635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68126ebbfbacba84691810e4077d2b2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tagert: []
+--- !u!4 &669151637
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669151635}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 153.3371, y: 4.319542, z: 49.87224}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &670403168
 GameObject:
   m_ObjectHideFlags: 0
@@ -3014,7 +3057,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1440255297
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3930,9 +3973,7 @@ MonoBehaviour:
   - {fileID: 1780351977479367}
   LevelSelection: {fileID: 1440255296}
   canvas: {fileID: 345635814}
-  level_car: 1
-  Car: {fileID: 0}
-  level: 1
+  tagertLevel: {fileID: 669151636}
 --- !u!1 &1954330873 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1339424909602166, guid: eb1843ed24e424f569a9f450c96c639c, type: 3}
@@ -5322,3 +5363,4 @@ SceneRoots:
   - {fileID: 126685689}
   - {fileID: 224857941}
   - {fileID: 4692249845080836240}
+  - {fileID: 669151637}
