@@ -229,7 +229,12 @@ MonoBehaviour:
   CarList: []
   LevelSelection: {fileID: 0}
   canvas: {fileID: 0}
+<<<<<<< HEAD
   tagertLevel: {fileID: 0}
+=======
+  level_car: 1
+  Car: {fileID: 0}
+>>>>>>> fbd2a15 (test_level)
 --- !u!1 &72456613
 GameObject:
   m_ObjectHideFlags: 0
@@ -3973,7 +3978,12 @@ MonoBehaviour:
   - {fileID: 1780351977479367}
   LevelSelection: {fileID: 1440255296}
   canvas: {fileID: 345635814}
+<<<<<<< HEAD
   tagertLevel: {fileID: 669151636}
+=======
+  level_car: 1
+  Car: {fileID: 0}
+>>>>>>> fbd2a15 (test_level)
 --- !u!1 &1954330873 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1339424909602166, guid: eb1843ed24e424f569a9f450c96c639c, type: 3}
