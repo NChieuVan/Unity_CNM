@@ -15,6 +15,7 @@ public class GamePlayManager : MonoBehaviour
         GameObject currentCar = Instantiate(Cars[PlayerPrefs.GetInt("CarNumber")]); 
         currentCar.transform.position = currentLevel.transform.GetChild(0).transform.position;
          
+        //Debug.....
     }
 
     // Update is called once per frame
