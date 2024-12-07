@@ -76,7 +76,8 @@ public class CarList : MonoBehaviour
                 desiredRotation = Quaternion.Euler(8.416f, 6.154f, 0f);
                 break;
             case 6:
-                desiredPosition = new Vector3(147f, 3.45f, 52f); // Vị trí cho Level 6
+                desiredPosition = new Vector3(601.5f, 8.85f, 414.43f); 
+                desiredRotation = Quaternion.Euler(8.416f, 6.154f, 0f); // Vị trí cho Level 6
                 break;
             case 7:
                 desiredPosition = new Vector3(147f, 3.45f, 52f); // Vị trí cho Level 7
