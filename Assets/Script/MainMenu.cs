@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static Cinemachine.DocumentationSortingAttribute;
 
 public class MainMenu : MonoBehaviour
 {
@@ -92,11 +93,16 @@ public class MainMenu : MonoBehaviour
     // Các phương thức để chọn cấp độ
     public void GetLevel_1() { StartCoroutine(SetLevel(1)); }
     public void GetLevel_2() { StartCoroutine(SetLevel(2)); }
-   // public void GetLevel_3() { SetLevel(3); }
-   // public void GetLevel_4() { SetLevel(4); }
-   // public void GetLevel_5() { SetLevel(5); }
-    
-    
+   
+    public void GetLevel_3() { StartCoroutine(SetLevel(3)); }
+    public void GetLevel_4() { StartCoroutine(SetLevel(4)); }
+    public void GetLevel_5() { StartCoroutine(SetLevel(5)); }
+    public void GetLevel_6() { StartCoroutine(SetLevel(6)); }
+    public void GetLevel_7() { StartCoroutine(SetLevel(7)); }
+    public void GetLevel_8() { StartCoroutine(SetLevel(8)); }
+    public void GetLevel_9() { StartCoroutine(SetLevel(9)); }
+    public void GetLevel_10() { StartCoroutine(SetLevel(10)); }
+
     private IEnumerator SetLevel(int level)
     {
         print("haah");
@@ -127,6 +133,7 @@ public class MainMenu : MonoBehaviour
 
     #region CarSelection
     int counter = 0;
+    public static int ll;
     public void NextCar()
     {
         if (counter != CarList.Length - 1)
@@ -142,6 +149,7 @@ public class MainMenu : MonoBehaviour
             item.SetActive(false);
         }
         CarList[counter].SetActive(true);
+        ll= counter;
     }
 
     public void PreviousCar()
@@ -154,11 +162,15 @@ public class MainMenu : MonoBehaviour
         {
             counter--;
         }
+        
+        
         foreach (var item in CarList)
         {
             item.SetActive(false);
         }
         CarList[counter].SetActive(true);
+        ll= counter;
+        
     }
     public void NextToCarSelection()
     {
