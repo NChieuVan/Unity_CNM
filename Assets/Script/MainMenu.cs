@@ -93,7 +93,7 @@ public class MainMenu : MonoBehaviour
     // Các phương thức để chọn cấp độ
     public void GetLevel_1() { StartCoroutine(SetLevel(1)); }
     public void GetLevel_2() { StartCoroutine(SetLevel(2)); }
-   
+
     public void GetLevel_3() { StartCoroutine(SetLevel(3)); }
     public void GetLevel_4() { StartCoroutine(SetLevel(4)); }
     public void GetLevel_5() { StartCoroutine(SetLevel(5)); }
@@ -103,15 +103,17 @@ public class MainMenu : MonoBehaviour
     public void GetLevel_9() { StartCoroutine(SetLevel(9)); }
     public void GetLevel_10() { StartCoroutine(SetLevel(10)); }
 
+
     private IEnumerator SetLevel(int level)
     {
         print("haah");
         PlayerPrefs.SetInt("SelectedLevel", level); // Lưu cấp độ đã chọn
         Debug.Log("Loading position screen...");
 
-
+        Loading.SetActive(true);
         // Thêm độ trễ ở đây (ví dụ: 2 giây)
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
+
         tagertLevel.ShowCubesForLevel(level);
 
         SceneManager.LoadScene("GamePlay"); // Chuyển đến scene Position
@@ -149,7 +151,7 @@ public class MainMenu : MonoBehaviour
             item.SetActive(false);
         }
         CarList[counter].SetActive(true);
-        ll= counter;
+        ll = counter;
     }
 
     public void PreviousCar()
@@ -162,15 +164,15 @@ public class MainMenu : MonoBehaviour
         {
             counter--;
         }
-        
-        
+
+
         foreach (var item in CarList)
         {
             item.SetActive(false);
         }
         CarList[counter].SetActive(true);
-        ll= counter;
-        
+        ll = counter;
+
     }
     public void NextToCarSelection()
     {
@@ -201,5 +203,5 @@ public class MainMenu : MonoBehaviour
 
     #endregion
 
-   }
+}
 

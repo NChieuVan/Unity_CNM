@@ -29,7 +29,7 @@ public class Colision_Xe_Tagert : MonoBehaviour
         if (collision.gameObject.CompareTag("Tagert"))
         {
             camvas.SetActive(true);
-            noti.text = "Bạn đã vượt màng thành công!";
+            noti.text = "Chúc mừng bạn đã vượt màn thành công!";
             
         }
        // if (collision.gameObject.CompareTag("hd"))
@@ -68,7 +68,8 @@ public class Colision_Xe_Tagert : MonoBehaviour
     }
     public void No_Tagert()
     {
-        camvas.SetActive(false);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1;
     }
 
 
